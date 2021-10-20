@@ -1,0 +1,15 @@
+syntax = "proto3";
+package protoorder;
+option go_package ="../protoorder";
+
+service OrderService {
+    rpc CreateOrder (QOrderInfo) returns (ROrderResult) {}
+}
+
+message QOrderInfo{
+    int64 goodId=1;
+    int64 price=2;
+}
+message ROrderResult{
+    int64 orderId=2;
+}
